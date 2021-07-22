@@ -14,19 +14,19 @@ var tipPerson = 0;
 var number = 0;
 
 
-bill.addEventListener('keyup',(e) => {
-    if(e.target.value !== ''){
+bill.addEventListener('keyup', (e) => {
+    if (e.target.value !== '') {
         totalPeople = parseFloat(e.target.value);
-        calc();   
+        calc();
     } else {
         totalPeople = 0;
         calc();
     }
-}); 
+});
 
 
 people.addEventListener('keyup', (e) => {
-    if(e.target.value === '0') {
+    if (e.target.value === '0') {
         error.innerText = `Can't be zero`;
         people.classList.add('input-error');
         calc();
@@ -49,17 +49,17 @@ btn.forEach((ele) => {
     });
 });
 
-function removeButton (){
-    btn.forEach((e) => { 
-        if(e.classList.contains('btn-active')){
+function removeButton() {
+    btn.forEach((e) => {
+        if (e.classList.contains('btn-active')) {
             e.classList.remove('btn-active');
-        } 
+        }
     });
 }
 
 custom.addEventListener('keyup', (e) => {
     removeButton();
-    if(e.target.value !== ''){
+    if (e.target.value !== '') {
         per = parseFloat(e.target.value);
         calc();
     } else {
@@ -69,7 +69,7 @@ custom.addEventListener('keyup', (e) => {
 })
 
 reset.addEventListener('click', (e) => {
-    if(e.target.classList.contains('reset-active')){
+    if (e.target.classList.contains('reset-active')) {
         bill.value = '';
         people.value = '';
         custom.value = '';
@@ -80,14 +80,15 @@ reset.addEventListener('click', (e) => {
         totalPerson = 0;
         tipPerson = 0;
         number = 0;
-        e.target.classList.remove('reset-active');   
+        e.target.classList.remove('reset-active');
+        removeButton();
     }
-    
+
 });
 
 
-function calc(){
-    if(number !== 0 && totalPeople !== 0){
+function calc() {
+    if (number !== 0 && totalPeople !== 0) {
         totalPerson = ((totalPeople + (totalPeople * per / 100)) / number).toFixed(2);
         tipPerson = ((totalPeople * per / 100) / number).toFixed(2);
         total.innerText = `$${totalPerson}`;
