@@ -46,6 +46,7 @@ btn.forEach((ele) => {
         e.target.classList.add('btn-active');
         per = e.target.dataset.value;
         calc();
+        custom.value = '';
     });
 });
 
