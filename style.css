@@ -99,19 +99,6 @@ button {
     display: block;
 }
 
-.input-block {
-    width: 100%;
-    height: 45px;
-    position: relative;
-}
-
-.block-icon {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-}
-
 .block-input {
     width: 100%;
     text-align: right;
@@ -123,6 +110,21 @@ button {
     color: var(--darkcyan);
     font-weight: 700;
 }
+
+#bill.block-input {
+    background: url("./images/icon-dollar.svg") no-repeat;
+	background-size: 0.5em;
+	background-position: 0.5em;
+	background-color: hsl(189, 41%, 97%);
+}
+
+#people.block-input {
+    background: url("./images/icon-person.svg") no-repeat;
+	background-size: 0.5em;
+	background-position: 0.5em;
+	background-color: hsl(189, 41%, 97%);
+}
+
 
 .block-input:focus, .custom:focus {
     border: 2px solid var(--primary);
@@ -167,10 +169,6 @@ button {
 .custom::placeholder {
     text-align: center;
 }
-
-/* .btn:first-child {
-    margin-bottom: 15px;
-} */
 
 .btn:not(:last-child):hover, .btn-active {
     background-color: var(--primary);
